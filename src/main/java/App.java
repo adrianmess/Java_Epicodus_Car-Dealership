@@ -1,8 +1,16 @@
 import models.Vehicle;
 import java.io.BufferedReader;
+import java.io.InputStreamReader;
+import java.io.IOException;
 
 public class App {
     public static void main(String[] args) {
+    BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+    System.out.println("What is your maximum budget for a vehicle?");
+
+    try {
+        String stringUserMaxBudget = bufferedReader.readLine();
+
 
         Vehicle hatchback = new Vehicle();
         hatchback.year = 1994;
@@ -32,18 +40,26 @@ public class App {
         truck.miles = 100000;
         truck.price = 4000;
 
-        Vehicle[] allVehicles ={hatchback, suv, sedan, truck};
+        Vehicle[] allVehicles = {hatchback, suv, sedan, truck};
 
-        System.out.println("All Vehicles:");
+        int userMaxBudget = Integer.parseInt(stringUserMaxBudget);
+
+        System.out.println("Alright, here's what we have in your price range:");
 
         for (Vehicle individualVehicle : allVehicles) {
-            System.out.println( "-------------------");
-            System.out.println( individualVehicle.year);
-            System.out.println( individualVehicle.brand);
-            System.out.println( individualVehicle.model);
-            System.out.println( individualVehicle.miles);
-            System.out.println( individualVehicle.price);
+            System.out.println("-------------------");
+            System.out.println(individualVehicle.year);
+            System.out.println(individualVehicle.brand);
+            System.out.println(individualVehicle.model);
+            System.out.println(individualVehicle.miles);
+            System.out.println(individualVehicle.price);
 
         }
+
+    }
+    catch(IOException e)
+    {
+        e.printStackTrace();
+    }
     }
 }
