@@ -6,4 +6,8 @@ public class Vehicle {
     public String model;
     public int miles;
     public int price;
+
+    public boolean worthBuying(int maxPrice) {
+        return (price < maxPrice);
+    }
 }
