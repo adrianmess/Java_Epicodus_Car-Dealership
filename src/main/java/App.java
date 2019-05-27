@@ -47,12 +47,15 @@ public class App {
         System.out.println("Alright, here's what we have in your price range:");
 
         for (Vehicle individualVehicle : allVehicles) {
-            System.out.println("-------------------");
-            System.out.println(individualVehicle.year);
-            System.out.println(individualVehicle.brand);
-            System.out.println(individualVehicle.model);
-            System.out.println(individualVehicle.miles);
-            System.out.println(individualVehicle.price);
+            if (individualVehicle.worthBuying(userMaxBudget)){
+                System.out.println("-------------------");
+                System.out.println(individualVehicle.year);
+                System.out.println(individualVehicle.brand);
+                System.out.println(individualVehicle.model);
+                System.out.println(individualVehicle.miles);
+                System.out.println(individualVehicle.price);
+            }
+
 
         }
 
