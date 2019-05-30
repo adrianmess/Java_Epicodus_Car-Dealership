@@ -57,6 +57,11 @@ public class App {
                 System.out.println("Finally, what's its price?");
                 int userVehiclePrice = Integer.parseInt(bufferedReader.readLine());
                 Vehicle userVehicle = new Vehicle(userVehicleYear, userVehicleBrand, userVehicleModel, userVehicleMiles, userVehiclePrice);
+                System.out.println(userVehicle.year);
+                System.out.println(userVehicle.brand);
+                System.out.println(userVehicle.model);
+                System.out.println(userVehicle.miles);
+                System.out.println(userVehicle.price);
             } else {
                 System.out.println("I'm sorry, we don't recognize your input");
             }
