@@ -18,63 +18,63 @@ public class App {
         allVehicles.add(sedan);
         allVehicles.add(truck);
 
-        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
-        System.out.println("Welcome to our car dealership. What would you like to do? Enter one of the following options: All Vehicles, Search Price, or Add Vehicle");
+        while (true) {
+            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+            System.out.println("Welcome to our car dealership. What would you like to do? Enter one of the following options: All Vehicles, Search Price, or Add Vehicle");
 
-        try {
+            try {
 
-            String navigationChoice = bufferedReader.readLine();
+                String navigationChoice = bufferedReader.readLine();
 
-            if (navigationChoice.equals("All Vehicles")) {
-                for (Vehicle individualVehicle : allVehicles) {
+                if (navigationChoice.equals("All Vehicles")) {
+                    for (Vehicle individualVehicle : allVehicles) {
 
-                    System.out.println("-------------------");
-                    System.out.println(individualVehicle.year);
-                    System.out.println(individualVehicle.brand);
-                    System.out.println(individualVehicle.model);
-                    System.out.println(individualVehicle.miles);
-                    System.out.println(individualVehicle.price);
-                }
-            } else if (navigationChoice.equals("Search Price")) {
-                System.out.println("What is your maximum budget for a vehicle?");
-                String stringUserMaxBudget = bufferedReader.readLine();
-                int userMaxBudget = Integer.parseInt(stringUserMaxBudget);
-                System.out.println("Here are the vehicles in your price range:");
-                for (Vehicle individualVehicle : allVehicles) {
-                    if (individualVehicle.worthBuying(userMaxBudget)) {
-                        System.out.println("----------------------");
+                        System.out.println("-------------------");
                         System.out.println(individualVehicle.year);
                         System.out.println(individualVehicle.brand);
                         System.out.println(individualVehicle.model);
                         System.out.println(individualVehicle.miles);
                         System.out.println(individualVehicle.price);
                     }
+                } else if (navigationChoice.equals("Search Price")) {
+                    System.out.println("What is your maximum budget for a vehicle?");
+                    String stringUserMaxBudget = bufferedReader.readLine();
+                    int userMaxBudget = Integer.parseInt(stringUserMaxBudget);
+                    System.out.println("Here are the vehicles in your price range:");
+                    for (Vehicle individualVehicle : allVehicles) {
+                        if (individualVehicle.worthBuying(userMaxBudget)) {
+                            System.out.println("----------------------");
+                            System.out.println(individualVehicle.year);
+                            System.out.println(individualVehicle.brand);
+                            System.out.println(individualVehicle.model);
+                            System.out.println(individualVehicle.miles);
+                            System.out.println(individualVehicle.price);
+                        }
+                    }
+                } else if (navigationChoice.equals("Add Vehicle")) {
+                    System.out.println("Ok! Lets add a vehicle. What year was the vehicle made?");
+                    int userVehicleYear = Integer.parseInt(bufferedReader.readLine());
+                    System.out.println("Great! Whats the make or brand of the vehicle?");
+                    String userVehicleBrand = bufferedReader.readLine();
+                    System.out.println("Got it! Ok, what is the model of the vehicle?");
+                    String userVehicleModel = bufferedReader.readLine();
+                    System.out.println("How many miles is on the vehicle?");
+                    int userVehicleMiles = Integer.parseInt(bufferedReader.readLine());
+                    System.out.println("Finally, what's its price?");
+                    int userVehiclePrice = Integer.parseInt(bufferedReader.readLine());
+                    Vehicle userVehicle = new Vehicle(userVehicleYear, userVehicleBrand, userVehicleModel, userVehicleMiles, userVehiclePrice);
+                    allVehicles.add(userVehicle);
+                    System.out.println(userVehicle.year);
+                    System.out.println(userVehicle.brand);
+                    System.out.println(userVehicle.model);
+                    System.out.println(userVehicle.miles);
+                    System.out.println(userVehicle.price);
+                } else {
+                    System.out.println("I'm sorry, we don't recognize your input");
                 }
-            } else if (navigationChoice.equals("Add Vehicle")){
-                System.out.println("Ok! Lets add a vehicle. What year was the vehicle made?");
-                int userVehicleYear = Integer.parseInt(bufferedReader.readLine());
-                System.out.println("Great! Whats the make or brand of the vehicle?");
-                String userVehicleBrand = bufferedReader.readLine();
-                System.out.println("Got it! Ok, what is the model of the vehicle?");
-                String userVehicleModel = bufferedReader.readLine();
-                System.out.println("How many miles is on the vehicle?");
-                int userVehicleMiles = Integer.parseInt(bufferedReader.readLine());
-                System.out.println("Finally, what's its price?");
-                int userVehiclePrice = Integer.parseInt(bufferedReader.readLine());
-                Vehicle userVehicle = new Vehicle(userVehicleYear, userVehicleBrand, userVehicleModel, userVehicleMiles, userVehiclePrice);
-                allVehicles.add(userVehicle);
-                System.out.println(userVehicle.year);
-                System.out.println(userVehicle.brand);
-                System.out.println(userVehicle.model);
-                System.out.println(userVehicle.miles);
-                System.out.println(userVehicle.price);
-            } else {
-                System.out.println("I'm sorry, we don't recognize your input");
+            } catch (IOException e) {
+                e.printStackTrace();
             }
-    }
-    catch(IOException e)
-    {
-        e.printStackTrace();
-    }
+        }
     }
 }
