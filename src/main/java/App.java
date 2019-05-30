@@ -20,9 +20,9 @@ public class App {
 
         boolean programRunning = true;
 
-        while (true) {
+        while (programRunning) {
             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
-            System.out.println("Welcome to our car dealership. What would you like to do? Enter one of the following options: All Vehicles, Search Price, or Add Vehicle");
+            System.out.println("Welcome to our car dealership. What would you like to do? Enter one of the following options: All Vehicles, Search Price, Add Vehicle or Exit");
 
             try {
 
