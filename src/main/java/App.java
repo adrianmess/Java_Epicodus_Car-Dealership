@@ -45,6 +45,18 @@ public class App {
                         System.out.println(individualVehicle.price);
                     }
                 }
+            } else if (navigationChoice.equals("Add Vehicle")){
+                System.out.println("Ok! Lets add a vehicle. What year was the vehicle made?");
+                int userVehicleYear = Integer.parseInt(bufferedReader.readLine());
+                System.out.println("Great! Whats the make or brand of the vehicle?");
+                String userVehicleBrand = bufferedReader.readLine();
+                System.out.println("Got it! Ok, what is the model of the vehicle?");
+                String userVehicleModel = bufferedReader.readLine();
+                System.out.println("How many miles is on the vehicle?");
+                int userVehicleMiles = Integer.parseInt(bufferedReader.readLine());
+                System.out.println("Finally, what's its price?");
+                int userVehiclePrice = Integer.parseInt(bufferedReader.readLine());
+                Vehicle userVehicle = new Vehicle(userVehicleYear, userVehicleBrand, userVehicleModel, userVehicleMiles, userVehiclePrice);
             } else {
                 System.out.println("I'm sorry, we don't recognize your input");
             }
