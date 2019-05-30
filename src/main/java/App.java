@@ -14,7 +14,7 @@ public class App {
         Vehicle[] allVehicles = {hatchback, suv, sedan, truck};
 
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
-        System.out.println("Welcome to our car dealership. What would you like to do? Enter one of the following options: All Vehicles or Search Price");
+        System.out.println("Welcome to our car dealership. What would you like to do? Enter one of the following options: All Vehicles, Search Price, or Add Vehicle");
 
         try {
 
