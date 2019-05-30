@@ -35,6 +35,17 @@ public class App {
                 System.out.println("What is your maximum budget for a vehicle?");
                 String stringUserMaxBudget = bufferedReader.readLine();
                 int userMaxBudget = Integer.parseInt(stringUserMaxBudget);
+                System.out.println("Here are the vehicles in your price range:");
+                for (Vehicle individualVehicle : allVehicles) {
+                    if (individualVehicle.worthBuying(userMaxBudget)) {
+                        System.out.println("----------------------");
+                        System.out.println(individualVehicle.year);
+                        System.out.println(individualVehicle.brand);
+                        System.out.println(individualVehicle.model);
+                        System.out.println(individualVehicle.miles);
+                        System.out.println(individualVehicle.price);
+                    }
+                }
         }
 
     }
