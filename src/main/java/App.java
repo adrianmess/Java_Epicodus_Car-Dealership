@@ -2,6 +2,7 @@ import models.Vehicle;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class App {
     public static void main(String[] args) {
@@ -11,7 +12,11 @@ public class App {
         Vehicle sedan = new Vehicle(2015, "Toyota", "Camry", 50000, 30000);
         Vehicle truck = new Vehicle(1999, "Ford", "Ranger", 100000, 4000);
 
-        Vehicle[] allVehicles = {hatchback, suv, sedan, truck};
+        ArrayList<Vehicle> allVehicles = new ArrayList<Vehicle>();
+        allVehicles.add(hatchback);
+        allVehicles.add(suv);
+        allVehicles.add(sedan);
+        allVehicles.add(truck);
 
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
         System.out.println("Welcome to our car dealership. What would you like to do? Enter one of the following options: All Vehicles, Search Price, or Add Vehicle");
