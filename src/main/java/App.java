@@ -14,11 +14,11 @@ public class App {
     Vehicle[] allVehicles = {hatchback, suv, sedan, truck};
 
     BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
-    System.out.println("What is your maximum budget for a vehicle?");
+    System.out.println("Welcome to our car dealership. What would you like to do? Enter one of the following options: All Vehicles or Search Price");
 
     try {
-        String stringUserMaxBudget = bufferedReader.readLine();
 
+        String stringUserMaxBudget = bufferedReader.readLine();
 
         int userMaxBudget = Integer.parseInt(stringUserMaxBudget);
 
