@@ -71,6 +71,9 @@ public class App {
                     System.out.println(userVehicle.model);
                     System.out.println(userVehicle.miles);
                     System.out.println(userVehicle.price);
+                } else if (navigationChoice.equals("Exit")){
+                    System.out.println("Goodbye");
+                    programRunning = false;
                 } else {
                     System.out.println("I'm sorry, we don't recognize your input");
                 }
