@@ -6,31 +6,31 @@ import java.io.IOException;
 public class App {
     public static void main(String[] args) {
 
-    Vehicle hatchback = new Vehicle(1994, "Subaru", "Legacy", 170000, 4000);
-    Vehicle suv = new Vehicle(2002, "Ford", "Explorer", 100000,7000);
-    Vehicle sedan = new Vehicle(2015, "Toyota", "Camry", 50000, 30000);
-    Vehicle truck = new Vehicle(1999, "Ford", "Ranger", 100000, 4000);
+        Vehicle hatchback = new Vehicle(1994, "Subaru", "Legacy", 170000, 4000);
+        Vehicle suv = new Vehicle(2002, "Ford", "Explorer", 100000, 7000);
+        Vehicle sedan = new Vehicle(2015, "Toyota", "Camry", 50000, 30000);
+        Vehicle truck = new Vehicle(1999, "Ford", "Ranger", 100000, 4000);
 
-    Vehicle[] allVehicles = {hatchback, suv, sedan, truck};
+        Vehicle[] allVehicles = {hatchback, suv, sedan, truck};
 
-    BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
-    System.out.println("Welcome to our car dealership. What would you like to do? Enter one of the following options: All Vehicles or Search Price");
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+        System.out.println("Welcome to our car dealership. What would you like to do? Enter one of the following options: All Vehicles or Search Price");
 
-    try {
+        try {
 
-        String navigationChoice = bufferedReader.readLine();
+            String navigationChoice = bufferedReader.readLine();
 
-        if (navigationChoice.equals("All Vehicles")) {
-            for (Vehicle individualVehicle : allVehicles) {
+            if (navigationChoice.equals("All Vehicles")) {
+                for (Vehicle individualVehicle : allVehicles) {
 
-                System.out.println("-------------------");
-                System.out.println(individualVehicle.year);
-                System.out.println(individualVehicle.brand);
-                System.out.println(individualVehicle.model);
-                System.out.println(individualVehicle.miles);
-                System.out.println(individualVehicle.price);
-            }
-        } else if (navigationChoice.equals("Search Price")) {
+                    System.out.println("-------------------");
+                    System.out.println(individualVehicle.year);
+                    System.out.println(individualVehicle.brand);
+                    System.out.println(individualVehicle.model);
+                    System.out.println(individualVehicle.miles);
+                    System.out.println(individualVehicle.price);
+                }
+            } else if (navigationChoice.equals("Search Price")) {
                 System.out.println("What is your maximum budget for a vehicle?");
                 String stringUserMaxBudget = bufferedReader.readLine();
                 int userMaxBudget = Integer.parseInt(stringUserMaxBudget);
@@ -44,11 +44,10 @@ public class App {
                         System.out.println(individualVehicle.miles);
                         System.out.println(individualVehicle.price);
                     }
-                } else {
+                }
+            } else {
                 System.out.println("I'm sorry, we don't recognize your input");
             }
-        }
-
     }
     catch(IOException e)
     {
