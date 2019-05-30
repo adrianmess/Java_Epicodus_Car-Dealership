@@ -32,7 +32,8 @@ public class App {
                 System.out.println(individualVehicle.price);
             }
         } else if (navigationChoice.equals("Search Price") {
-
+                System.out.println("What is your maximum budget for a vehicle?");
+                String stringUserMaxBudget = bufferedReader.readLine();
         }
 
     }
