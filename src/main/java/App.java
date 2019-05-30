@@ -18,14 +18,12 @@ public class App {
 
     try {
 
-        String stringUserMaxBudget = bufferedReader.readLine();
-
-        int userMaxBudget = Integer.parseInt(stringUserMaxBudget);
+        String navigationChoice = bufferedReader.readLine();
 
         System.out.println("Alright, here's what we have in your price range:");
 
         for (Vehicle individualVehicle : allVehicles) {
-            if (individualVehicle.worthBuying(userMaxBudget)){
+            if (navigationChoice.equals("All Vehicles")) {
                 System.out.println("-------------------");
                 System.out.println(individualVehicle.year);
                 System.out.println(individualVehicle.brand);
@@ -33,8 +31,6 @@ public class App {
                 System.out.println(individualVehicle.miles);
                 System.out.println(individualVehicle.price);
             }
-
-
         }
 
     }
