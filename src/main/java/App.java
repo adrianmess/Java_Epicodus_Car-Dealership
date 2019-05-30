@@ -20,8 +20,9 @@ public class App {
 
         String navigationChoice = bufferedReader.readLine();
 
-        for (Vehicle individualVehicle : allVehicles) {
-            if (navigationChoice.equals("All Vehicles")) {
+        if (navigationChoice.equals("All Vehicles")) {
+            for (Vehicle individualVehicle : allVehicles) {
+
                 System.out.println("-------------------");
                 System.out.println(individualVehicle.year);
                 System.out.println(individualVehicle.brand);
