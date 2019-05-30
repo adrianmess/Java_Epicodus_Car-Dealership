@@ -45,7 +45,8 @@ public class App {
                         System.out.println(individualVehicle.miles);
                         System.out.println(individualVehicle.price);
                     }
-                }
+                } else {
+                    System.out.println("I'm sorry, we don't recognize your input");
         }
 
     }
