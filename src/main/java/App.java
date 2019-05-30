@@ -31,6 +31,8 @@ public class App {
                 System.out.println(individualVehicle.miles);
                 System.out.println(individualVehicle.price);
             }
+        } else if (navigationChoice.equals("Search Price") {
+
         }
 
     }
