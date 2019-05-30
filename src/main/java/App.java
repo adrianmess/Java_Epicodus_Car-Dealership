@@ -20,8 +20,6 @@ public class App {
 
         String navigationChoice = bufferedReader.readLine();
 
-        System.out.println("Alright, here's what we have in your price range:");
-
         for (Vehicle individualVehicle : allVehicles) {
             if (navigationChoice.equals("All Vehicles")) {
                 System.out.println("-------------------");
@@ -31,7 +29,7 @@ public class App {
                 System.out.println(individualVehicle.miles);
                 System.out.println(individualVehicle.price);
             }
-        } else if (navigationChoice.equals("Search Price") {
+        } else if (navigationChoice.equals("Search Price")) {
                 System.out.println("What is your maximum budget for a vehicle?");
                 String stringUserMaxBudget = bufferedReader.readLine();
                 int userMaxBudget = Integer.parseInt(stringUserMaxBudget);
@@ -45,7 +43,7 @@ public class App {
                         System.out.println(individualVehicle.miles);
                         System.out.println(individualVehicle.price);
                     }
-                } else{
+                } else {
                 System.out.println("I'm sorry, we don't recognize your input");
             }
         }
